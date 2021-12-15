@@ -1,0 +1,39 @@
+fuel = 5
+system = ''
+while fuel>0:
+    command = input("> ").upper()
+    if command == "HELP":
+        print("Start: Start the car.")
+        print("Drive: Drive the car")
+        print("Stop: Stop the car.")
+        print("Quit: Exit Game.")
+    elif command == "START":
+        if system == "START":
+            print("Car is already started!")
+        else:
+            print(f"Car Started, fuel is {fuel}.")
+        system = command
+    elif command == "DRIVE":
+        if system == "START":
+            fuel -= 1
+            print(f"Car driving, fuel is {fuel}.")
+            system = command
+        elif system == "DRIVE":
+            fuel -= 1
+            print(f"Car driving, fuel is {fuel}.")
+            system = command
+        else:
+            print("Car has not been started!")
+    elif command == "STOP":
+        if system == "STOP":
+            print("Car has already been stopped!")
+        else:
+            print(f"Car has stopped. Fuel is {fuel}")
+        system = command
+    elif command == "QUIT":
+        print("Game has been stopped.")
+        break
+    else:
+        print("I can't understand it!")
+else:
+    print("Sorry you ran out of fuel!")
